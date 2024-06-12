@@ -1,5 +1,5 @@
 import React from "react";
-import All_Data, { Product } from "../men/aac";
+import All_Data, { Product } from "../../../../public/aac";
 import Link from "next/link";
 
 

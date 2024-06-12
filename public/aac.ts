@@ -1,13 +1,13 @@
 
 export type Product = {
-    id: string | number;
+    id:  string ;
     category: string;
     image: string;
     type: string;
     name: string;
     model: string;
-    new_price: string;
-    old_price: string;
+    new_price: string | number;
+    old_price: string | number;
     description: string;
 };
 
@@ -15,8 +15,8 @@ export type Product = {
 const All_Data : Product[] = [
    
     {
-        "id": "31",
-        "category": "WomanWear",
+        "id": "1",
+        "category": "Women",
         "image": "/WomanWear/1.jpg",
         "type": "Dress",
         "name": "Zara Flowy Maxi",
@@ -27,8 +27,8 @@ const All_Data : Product[] = [
         "description": "A flowy maxi dress with floral patterns, perfect for summer occasions."
     },
     {
-        "id": "32",
-        "category": "WomanWear",
+        "id": "2",
+        "category": "Women",
         "image": "/WomanWear/2.jpg",
         "type": "Blouse",
         "name": "H&M Classic Silk",
@@ -39,8 +39,8 @@ const All_Data : Product[] = [
         "description": "A classic silk blouse suitable for professional and casual settings."
     },
     {
-        "id": "33",
-        "category": "WomanWear",
+        "id": "3",
+        "category": "Women",
         "image": "/WomanWear/3.jpg",
         "type": "Jeans",
         "name": "Levi's 501 Skinny",
@@ -51,8 +51,8 @@ const All_Data : Product[] = [
         "description": "Skinny fit jeans with a classic 5-pocket design, perfect for everyday wear."
     },
     {
-        "id": "34",
-        "category": "WomanWear",
+        "id": "4",
+        "category": "Women",
         "image": "/WomanWear/4.jpg",
         "type": "Jumpsuit",
         "name": "Forever 21 Utility Jumpsuit",
@@ -63,8 +63,8 @@ const All_Data : Product[] = [
         "description": "A utility-style jumpsuit with a modern and versatile look."
     },
     {
-        "id": "35",
-        "category": "WomanWear",
+        "id": "5",
+        "category": "Women",
         "image": "/WomanWear/5.jpg",
         "type": "Skirt",
         "name": "Topshop A-Line Mini",
@@ -75,8 +75,8 @@ const All_Data : Product[] = [
         "description": "A stylish A-line mini skirt with a retro touch, suitable for various occasions."
     },
     {
-        "id": "36",
-        "category": "WomanWear",
+        "id": "6",
+        "category": "Women",
         "image": "/WomanWear/6.jpg",
         "type": "Sweater",
         "name": "Gap Cable Knit",
@@ -87,8 +87,8 @@ const All_Data : Product[] = [
         "description": "A cozy cable knit sweater with a timeless design, perfect for chilly days."
     },
     {
-        "id": "37",
-        "category": "WomanWear",
+        "id": "7",
+        "category": "Women",
         "image": "/WomanWear/7.jpg",
         "type": "Blazer",
         "name": "Mango Tailored Blazer",
@@ -99,8 +99,8 @@ const All_Data : Product[] = [
         "description": "A tailored blazer with a chic silhouette, suitable for formal and casual looks."
     },
     {
-        "id": "38",
-        "category": "WomanWear",
+        "id": "8",
+        "category": "Women",
         "image": "/WomanWear/8.jpg",
         "type": "Activewear",
         "name": "Lululemon Align Leggings",
@@ -111,8 +111,8 @@ const All_Data : Product[] = [
         "description": "High-quality leggings with a buttery soft feel, ideal for yoga and workouts."
     },
     {
-        "id": "39",
-        "category": "WomanWear",
+        "id": "9",
+        "category": "Women",
         "image": "/WomanWear/9.jpg",
         "type": "Swimwear",
         "name": "Secret Bikini Set",
@@ -123,8 +123,8 @@ const All_Data : Product[] = [
         "description": "A stylish bikini set with vibrant patterns, perfect for beach days."
     },
     {
-        "id": "40",
-        "category": "WomanWear",
+        "id": "24",
+        "category": "Women",
         "image": "/WomanWear/10.jpg",
         "type": "Pants Hollister",
         "name": "High-Rise Skinny",
@@ -135,8 +135,8 @@ const All_Data : Product[] = [
         "description": "High-rise skinny pants with a flattering fit, suitable for various occasions."
     },
     {
-        "id": "41",
-        "category": "WomanWear",
+        "id": "25",
+        "category": "Women",
         "image": "/WomanWear/11.jpg",
         "type": "Coat",
         "name": "Voltaire Wool Blend Coat",
@@ -147,8 +147,8 @@ const All_Data : Product[] = [
         "description": "A stylish wool blend coat with a modern and elegant design, perfect for colder days."
     },
     {
-        "id": "42",
-        "category": "WomanWear",
+        "id": "26",
+        "category": "Women",
         "image": "/WomanWear/12.jpg",
         "type": "T-Shirt",
         "name": "Eagle Graphic Tee",

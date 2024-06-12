@@ -2,7 +2,7 @@ import React from 'react'
 
 const Banner = () => {
         return (
-          <div className="w-[95%] h-[55vh] flex flex-col items-center justify-center mx-auto mb-[30px] bg-gradient-to-b from-[#e1ffea22] to-[#afff97] gap-2 py-0 ">
+          <div className="w-[95%] h-[55vh] flex flex-col items-center justify-center mx-auto mb-[30px] bg-gradient-to-b  from-[#e1ffea22] to-[#B4D4FF] gap-2 py-0 ">
             <h1 className="text-[#454545] text-[50px] font-semibold">
               Get Exclusive Offers On Your Email
             </h1>

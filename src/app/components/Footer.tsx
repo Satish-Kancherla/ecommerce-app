@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className="flex flex-col justify-center items-center gap-5">
           <div className="flex items-center gap-5">
-            <img src="{amazon}" alt="Amazon logo" className="w-15" />
+            <img src="/social.png" alt="Amazon logo" className="w-12" />
             <p className="text-[#383838] text-[35px] font-bold">AMAZON</p>
           </div>
           <ul className="flex list-none gap-8 text-[#252525] text-[14px]">

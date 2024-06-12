@@ -1,11 +1,11 @@
 import React from 'react'
 import Item from './Items';
-import data1 from '../dashboard/men/aac'
+import data1 from '../../../public/aab'
 
 const Newarrivals = () => {
     return (
-        <div className='flex flex-col items-center gap-2 h-[60vh] mt-[50px] mb-[150px]'>
-          <h1 className='text-2xl font-semibold'>NEW COLLECTIONS</h1>
+        <div className='flex flex-col items-center gap-2 h-[60vh] mt-[50px] mb-[550px]'>
+          <h1 className='text-3xl font-semibold'>NEW COLLECTIONS</h1>
           <hr className='w-[200px] h-[4px] rounded-[10px] bg-[#252525]'/>
           <div className="grid grid-cols-4 gap-[30px] mt-[50px]">
             {data1.map((item) => {

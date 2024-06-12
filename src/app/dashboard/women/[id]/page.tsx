@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import All_Data, { Product } from '../../../../../public/aac';
 import { ShopContextType, useShopContext } from '../../ShopContext';
 
-const Men = () => {
+const Women = () => {
     const { id } = useParams<{ id: string }>(); 
     const { addToCart } = useShopContext() as ShopContextType;
     const [selectedSize, setSelectedSize] = useState<string | null>(null);
@@ -61,11 +61,11 @@ const Men = () => {
                     </div>
                     <button
                         onClick={() => addToCart(products.id)}
-                        className="px-10 py-3 w-52 text-lg font-semibold text-white bg-red-500 mb-10 rounded-lg cursor-pointer hover:bg-red-600 active:bg-blue-700"
+                        className="px-10 py-4 w-52 text-lg font-semibold text-white bg-red-500 mb-10 rounded-lg cursor-pointer hover:bg-red-600 active:bg-blue-700"
                     >
                         ADD TO CART
                     </button>
-                    <p className='mt-2'>
+                    <p className="mt-2">
                         <span className="font-semibold">Category: </span>{products.category}
                     </p>
                 </div>
@@ -74,4 +74,4 @@ const Men = () => {
     );
 };
 
-export default Men;
+export default Women;

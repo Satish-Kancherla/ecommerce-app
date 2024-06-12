@@ -1,15 +1,16 @@
 import React from "react";
 import Navbar from "./Navbar";
+import ShopContextProvider from "./ShopContext";
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <>
-            <Navbar />
-            {children}
-        </>
-    );
+  return (
+    <ShopContextProvider>
+      <Navbar />
+      {children}
+    </ShopContextProvider>
+  );
 }
