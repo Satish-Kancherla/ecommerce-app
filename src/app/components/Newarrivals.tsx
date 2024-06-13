@@ -4,10 +4,10 @@ import data1 from '../../../public/aab'
 
 const Newarrivals = () => {
     return (
-        <div className='flex flex-col items-center gap-2 h-[60vh] mt-[50px] mb-[550px]'>
+        <div className='flex flex-col items-center gap-2 h-auto mt-[50px] '>
           <h1 className='text-3xl font-semibold'>NEW COLLECTIONS</h1>
           <hr className='w-[200px] h-[4px] rounded-[10px] bg-[#252525]'/>
-          <div className="grid grid-cols-4 gap-[30px] mt-[50px]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-[50px]">
             {data1.map((item) => {
               return (
                 <Item

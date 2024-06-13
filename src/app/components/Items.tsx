@@ -2,9 +2,8 @@ import Link from "next/link";
 
 const Item = (props:any) => {
     return (
-      <div className="w-[300px] transform transition-transform duration-600 hover:scale-105">
-       
-        <Link href={`/dashboard/products/${props.id}`}>
+        <div className="w-[300px] transform transition-transform duration-600 hover:scale-105 sm:w-[250px] md:w-[300px] ">
+          <Link href={`/dashboard/products/${props.id}`}>
           <img src={props.image} alt='' className="w-full"/>
         </Link>
         <p className="my-[6px]">{props.name}</p>

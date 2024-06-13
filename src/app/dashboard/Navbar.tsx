@@ -42,7 +42,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className=" ml-auto mr-5 mt-2">
-        <Link href="/login" className="w-20 p-2 text-center border-x-2 border-slate-500 rounded-3xl text-slate-400 text-[18px] font-medium bg-white cursor-pointer">Login</Link>
+        <Link href="/login" className="w-20 p-2 text-center border-2 border-slate-500 rounded-3xl text-slate-400 text-[18px] font-medium bg-white cursor-pointer">Login</Link>
       </div>
       <div className="flex items-center -mt-5 mr-5 ">
         <Link href="/dashboard/cart">

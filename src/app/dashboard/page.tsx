@@ -10,11 +10,11 @@ const page = () => {
     //     Welcome to Dashboard
     // </div>
     <>
-      <div className="mt-5">
-        <Hero />
-        <Newarrivals />
-        <Banner />
-        <Footer />
+      <div className="mt-5">        
+        <div className="mb-10"><Hero /></div>
+        <div className="mb-10"><Newarrivals /></div>
+        <div className="mb-10"><Banner /></div>
+        <div ><Footer /></div>
       </div>
     </>
   );
