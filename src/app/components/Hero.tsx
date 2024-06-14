@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div className="h-[90vh] bg-gradient-to-b from-[#ffb4b4] to-[#e1ffea22] flex">
+        <div className="h-[90vh] bg-gradient-to-b from-[#b4c6ff] to-[#e1ffea22] flex">
           <div className="flex-1 flex flex-col justify-center gap-5 pl-[180px] leading-tight">
             <h2 className="text-[26px] font-semibold text-[#090909]">NEW ARRIVALS ONLY</h2>
             <div>

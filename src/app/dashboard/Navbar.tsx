@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import { ShopContextType, useShopContext } from "./ShopContext";
-import { useAuth } from "../AuthContext";
+import { ShopContextType, useShopContext } from "../context/ShopContext";
+import { useAuth } from "../context/AuthContext";
 import { LogIn, LogOut, User } from "lucide-react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -76,7 +76,7 @@ const Navbar = () => {
       </div>
       <div
         onClick={handleClick}
-        className="cursor-pointer mr-5 uppercase h-9 w-9 m-1 text-lg bg-green-700 select-none flex items-center justify-center rounded-full text-white"
+        className="cursor-pointer mr-5 uppercase h-9 w-9 m-1 text-lg bg-blue-700 select-none flex items-center justify-center rounded-full text-white"
       >
         {user ? (
           user.email.split(" ").map((str: string, i: number) => i < 2 && str[0])
@@ -119,10 +119,10 @@ const Navbar = () => {
         </div>
         <hr className="my-2" />
         {user ? (
-          <MenuItem onClick={logout}>
+           <Link href="/dashboard"><MenuItem onClick={logout}>
             <LogOut className="text-theme-text w-5 mr-2 cursor-pointer" />
             Logout
-          </MenuItem>
+          </MenuItem></Link>
         ) : (
           <div>
             <Link href="/login">

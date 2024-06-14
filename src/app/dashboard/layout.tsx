@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
-import ShopContextProvider from "./ShopContext";
+import ShopContextProvider from "../context/ShopContext";
 
 export default function RootLayout({
   children,

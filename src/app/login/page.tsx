@@ -3,7 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../context/AuthContext";
 
 export interface LoginData {
   email: string;
@@ -30,10 +30,7 @@ const Login = () => {
     try {
       const response = await axios.post('/api/auth/login', data);
       const email = response.data.email;
-      console.log(email);
-      
-
-      // Update the auth context with the logged-in user's username
+      console.log(email);      
       login(email);
       router.push('/dashboard');
     } catch (error) {
