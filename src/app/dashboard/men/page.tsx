@@ -79,7 +79,7 @@ const Man = () => {
               <img src={images.image} alt={images.name} className="w-full" />
               <p className="my-[6px]">{images.name}</p>
               <div className="flex gap-[20px]">
-                <div className="text-[#374151] text-[18px] font-semibold">
+                <div className="text-green-500 font-bold text-[18px]">
                   RS {images.new_price}
                 </div>
                 <div className="text-[#8c8c8c] text-[18px] font-semibold line-through">

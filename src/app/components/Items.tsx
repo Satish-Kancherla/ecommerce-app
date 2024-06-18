@@ -8,7 +8,7 @@ const Item = (props:any) => {
         </Link>
         <p className="my-[6px]">{props.name}</p>
         <div className="flex gap-[20px]">
-          <div className="text-[#374151] text-[18px] font-semibold">
+          <div className="text-green-500 font-bold text-[18px]">
             RS {props.new_price}
           </div>
           <div className="text-[#8c8c8c] text-[18px] font-semibold line-through">

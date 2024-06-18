@@ -29,13 +29,13 @@ const Navbar = () => {
         <p>AMAZON</p>
       </div>
       <div className="flex justify-center gap-10 text-xl mt-2 font-semibold ">
-        {/* <Link
+        <Link
           className="focus:border-b-2 focus:text-red-600  focus:font-bold focus:border-red-600"
           // focus:border-b-2 focus:text-red-600  focus:font-bold focus:border-slate-900
-          href={"/dashboard"}
+          href={"/profile"}
         >
           Home
-        </Link> */}
+        </Link>
         <Link
           className="focus:border-b-2 focus:text-red-600  focus:font-bold focus:border-red-600 "
           href={"/profile/men"}
@@ -76,7 +76,7 @@ const Navbar = () => {
       </div> */}
       <div
         onClick={handleClick}
-        className="cursor-pointer mr-5 uppercase ml-auto h-9 w-9 m-1 text-lg bg-blue-700 select-none flex items-center justify-center rounded-full text-white"
+        className="cursor-pointer mr-5 uppercase ml-auto h-9 w-9 m-1 text-lg bg-green-600 select-none flex items-center justify-center rounded-full text-white"
       >
         {user ? (
           user.email.split(" ").map((str: string, i: number) => i < 2 && str[0])
@@ -98,7 +98,7 @@ const Navbar = () => {
         <div className="flex w-full items-center px-2 ">
           {user && user ? (
             <div className="flex w-full items-center ">
-              <div className="uppercase h-6 w-6 text-xs bg-slate-900 select-none flex items-center justify-center rounded-full text-white">
+              <div className="uppercase h-6 w-6 text-xs bg-green-700 select-none flex items-center justify-center rounded-full text-white">
                 {user &&
                   user.email
                     .split(" ")

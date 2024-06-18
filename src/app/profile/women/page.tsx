@@ -49,7 +49,7 @@ const WomenList = () => {
   };
 
   if (!Array.isArray(women) || women.length === 0) {
-    return <div className="mt-32 text-center">Loading...</div>;
+    return <div className="mt-52 text-center">Loading...</div>;
   }
 
   return (
