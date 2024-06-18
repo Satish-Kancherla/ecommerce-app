@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import {prisma} from '@/lib/prisma';
 import bcrypt from 'bcrypt';
+import { cookies } from 'next/headers';
 
 export async function POST(req) {
   try {
@@ -12,8 +13,13 @@ export async function POST(req) {
    
     if (user && await bcrypt.compare(password, user.password)) {
       delete user.password
+      cookies().set('user',JSON.stringify(user))
       delete user.id
-      return NextResponse.json(user, { status: 200 });
+      // if(user.isAdmin === true){
+      //   return NextResponse.json(user, { status: 200,redirect:'/profile'})
+      // }
+
+      return NextResponse.json(user, { status: 200})
     } else {
       return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
     }

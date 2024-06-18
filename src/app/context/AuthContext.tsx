@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import React, { useState, useContext, ReactNode, useEffect } from "react";
 
 export interface User {
@@ -28,6 +29,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user");
+    axios.post("/api/auth/logout")                
   };
 
   useEffect(() => {

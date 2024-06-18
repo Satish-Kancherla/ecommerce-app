@@ -28,14 +28,18 @@ const Login = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/auth/login', data);
+      const response = await axios.post("/api/auth/login", data);
       const email = response.data.email;
-      console.log(email);      
+      console.log(response);
       login(email);
-      router.push('/dashboard');
+      if (response.data.isAdmin) {
+        router.push("/profile");
+      } else {
+        router.push("/dashboard");
+      }
     } catch (error) {
-      setError('Login Failed');
-      console.error('Login Failed', error);
+      setError("Login Failed");
+      console.error("Login Failed", error);
     }
   };
 
