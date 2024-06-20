@@ -8,6 +8,7 @@ type MenItem = {
   new_price: string;
   old_price: string;
   description: string;
+  imageUrl: string;
 };
 
 type UpdateProductModalProps = {
@@ -17,23 +18,52 @@ type UpdateProductModalProps = {
   onUpdate: (updatedProduct: MenItem) => void;
 };
 
-const UpdateProductModal = ({ product, isOpen, onClose, onUpdate }: UpdateProductModalProps) => {
+const UpdateProductModal = ({
+  product,
+  isOpen,
+  onClose,
+  onUpdate,
+}: UpdateProductModalProps) => {
   const [updatedProduct, setUpdatedProduct] = useState<MenItem>(product);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
   useEffect(() => {
     setUpdatedProduct(product);
+    setSelectedFile(null); // Reset the selected file when the product changes
+    setPreviewUrl(product.imageUrl); // Reset the preview URL when the product changes
   }, [product]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setUpdatedProduct({
       ...updatedProduct,
       [e.target.name]: e.target.value,
     });
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedFile(e.target.files[0]);
+      setPreviewUrl(URL.createObjectURL(e.target.files[0]));
+    }
+  };
+
   const handleSubmit = async () => {
     try {
-      const res = await axios.put(`/api/men/update?id=${updatedProduct.id}`, updatedProduct);
+      const formData = new FormData();
+      formData.append("id", updatedProduct.id);
+      formData.append("category", updatedProduct.category);
+      formData.append("name", updatedProduct.name);
+      formData.append("new_price", updatedProduct.new_price);
+      formData.append("old_price", updatedProduct.old_price);
+      formData.append("description", updatedProduct.description);
+      if (selectedFile) {
+        formData.append("image", selectedFile);
+      }
+
+      const res = await axios.put(`/api/men/update?id=${updatedProduct.id}`, formData);
       if (res.status === 200) {
         onUpdate(updatedProduct);
         onClose();
@@ -85,10 +115,33 @@ const UpdateProductModal = ({ product, isOpen, onClose, onUpdate }: UpdateProduc
             placeholder="Category"
             className="w-full p-2 border rounded"
           />
+           {previewUrl && (
+            <div className="mt-2">
+              <img src={previewUrl} alt="Preview" className="h-40 w-40 object-cover rounded-md" />
+            </div>
+          )}
+          <input
+            type="file"
+            name="image"
+            id="image"
+            onChange={handleFileChange}
+            className="mt-1 block w-6/12 shadow-sm sm:text-sm border-gray-300 rounded-md border-2"
+          />
+         
         </div>
         <div className="mt-4 flex justify-end space-x-2">
-          <button onClick={onClose} className="bg-gray-500 text-white p-2 rounded">Cancel</button>
-          <button onClick={handleSubmit} className="bg-blue-500 text-white p-2 rounded">Update</button>
+          <button
+            onClick={onClose}
+            className="bg-gray-500 text-white p-2 rounded"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleSubmit}
+            className="bg-blue-500 text-white p-2 rounded"
+          >
+            Update
+          </button>
         </div>
       </div>
     </div>
