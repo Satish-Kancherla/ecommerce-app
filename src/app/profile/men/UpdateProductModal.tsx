@@ -77,7 +77,7 @@ const UpdateProductModal = ({
 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-6 rounded-lg shadow-lg">
+      <div className="bg-white p-4 rounded-lg shadow-lg">
         <h2 className="text-xl font-bold mb-4">Update Product</h2>
         <div className="space-y-4">
           <input
@@ -85,35 +85,35 @@ const UpdateProductModal = ({
             value={updatedProduct.name}
             onChange={handleChange}
             placeholder="Name"
-            className="w-full p-2 border rounded"
+            className="w-full p-1 border rounded"
           />
           <textarea
             name="description"
             value={updatedProduct.description}
             onChange={handleChange}
             placeholder="Description"
-            className="w-full p-2 border rounded"
+            className="w-full p-1 border rounded"
           />
           <input
             name="new_price"
             value={updatedProduct.new_price}
             onChange={handleChange}
             placeholder="New Price"
-            className="w-full p-2 border rounded"
+            className="w-full p-1 border rounded"
           />
           <input
             name="old_price"
             value={updatedProduct.old_price}
             onChange={handleChange}
             placeholder="Old Price"
-            className="w-full p-2 border rounded"
+            className="w-full p-1 border rounded"
           />
           <input
             name="category"
             value={updatedProduct.category}
             onChange={handleChange}
             placeholder="Category"
-            className="w-full p-2 border rounded"
+            className="w-full p-1 border rounded"
           />
            {previewUrl && (
             <div className="mt-2">
@@ -125,11 +125,11 @@ const UpdateProductModal = ({
             name="image"
             id="image"
             onChange={handleFileChange}
-            className="mt-1 block w-6/12 shadow-sm sm:text-sm border-gray-300 rounded-md border-2"
+            className=" block w-6/12 shadow-sm sm:text-sm border-gray-300 rounded-md border-2"
           />
          
         </div>
-        <div className="mt-4 flex justify-end space-x-2">
+        <div className="mt-2 flex justify-end space-x-2">
           <button
             onClick={onClose}
             className="bg-gray-500 text-white p-2 rounded"

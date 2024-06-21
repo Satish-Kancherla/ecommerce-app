@@ -15,13 +15,15 @@ type WomenItem = {
 
 const WomenList = () => {
   const [women, setWomen] = useState<WomenItem[]>([]);
-  const [selectedProduct, setSelectedProduct] = useState<WomenItem | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<WomenItem | null>(
+    null
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchWomen = async () => {
       try {
-        const res = await axios.get('/api/women');
+        const res = await axios.get("/api/women");
         setWomen(res.data);
       } catch (error) {
         console.error("Error fetching women products", error);
@@ -33,14 +35,18 @@ const WomenList = () => {
   const handleDelete = async (id: string) => {
     try {
       await axios.delete(`/api/women/delete?id=${id}`);
-      setWomen(women.filter(item => item.id !== id));
+      setWomen(women.filter((item) => item.id !== id));
     } catch (error) {
       console.error("Error deleting product", error);
     }
   };
 
   const handleUpdate = (updatedProduct: WomenItem) => {
-    setWomen(women.map(item => (item.id === updatedProduct.id ? updatedProduct : item)));
+    setWomen(
+      women.map((item) =>
+        item.id === updatedProduct.id ? updatedProduct : item
+      )
+    );
   };
 
   const handleEdit = (product: WomenItem) => {
@@ -49,23 +55,38 @@ const WomenList = () => {
   };
 
   if (!Array.isArray(women) || women.length === 0) {
-    return <div className="mt-52 text-center">Loading...</div>;
+    return (
+
+        <div className="mt-52 w-screen flex items-center justify-center">
+          <div className="flex justify-center items-center animate-spin gap-1 w-12 h-12">
+            {/* <div className="w-1/2 h-1/2 bg-blue-500 rounded-full"></div> */}
+            <div className="w-1/2 h-1/2 bg-red-700 rounded-full  "></div>
+            <div className="w-1/2 h-1/2 bg-green-700 rounded-full  "></div>
+          </div>
+        </div>
+    );
   }
 
   return (
     <div className="space-y-4 mt-10 mx-5">
       <Link href="/profile/women/create">
-        <button className="bg-red-500 text-white p-2 rounded">Add Product</button>
+        <button className="bg-red-500 text-white p-2 rounded">
+          Add Product
+        </button>
       </Link>
-      {women.map(item => (
+      {women.map((item) => (
         <div key={item.id} className="p-4 border rounded-md shadow-md flex">
           <div onClick={() => handleEdit(item)}>
             <h2 className="text-xl font-bold mt-2">{item.name}</h2>
             <p className="text-gray-700">{item.description}</p>
             <div className="flex justify-between items-center mt-4">
               <div>
-                <span className="text-green-500 font-bold">Rs.{item.new_price}</span>
-                <span className="text-gray-500 line-through ml-2">Rs.{item.old_price}</span>
+                <span className="text-green-500 font-bold">
+                  Rs.{item.new_price}
+                </span>
+                <span className="text-gray-500 line-through ml-2">
+                  Rs.{item.old_price}
+                </span>
               </div>
             </div>
           </div>

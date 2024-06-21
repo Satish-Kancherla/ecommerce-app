@@ -23,7 +23,7 @@ const MenList = () => {
   useEffect(() => {
     const fetchMen = async () => {
       try {
-        const res = await axios.get("/api/men");
+        const res = await axios.get("/api/men/");
         setMen(res.data);
       } catch (error) {
         console.error("Error fetching men products", error);
@@ -53,7 +53,15 @@ const MenList = () => {
   };
 
   if (!Array.isArray(men) || men.length === 0) {
-    return <div className="mt-52 text-center">Loading...</div>;
+    return (
+      <div className="mt-52 w-screen flex items-center justify-center">
+        <div className="flex justify-center items-center animate-bounce gap-1 w-12 h-10">
+          <div className="w-1/2 h-1/2 bg-blue-500 rounded-full"></div>
+          <div className="w-1/2 h-1/2 bg-red-500 rounded-full  "></div>
+          <div className="w-1/2 h-1/2 bg-green-500 rounded-full  "></div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -92,22 +100,22 @@ const MenList = () => {
                     Rs.{item.old_price}
                   </span>
                   <div className="flex gap-2">
-                  <div className="mt-12  ">
-                    <button
-                      onClick={() => handleDelete(item.id)}
-                      className="bg-red-500 text-white p-2 rounded outline-none"
-                    >
-                      Delete
-                    </button>
-                  </div>
-                  <div className="mt-12  ">
-                    <button
-                      onClick={() => handleEdit(item)}
-                      className="bg-blue-500 text-white px-4 py-2 rounded outline-none"
-                    >
-                      Edit
-                    </button>
-                  </div>
+                    <div className="mt-12  ">
+                      <button
+                        onClick={() => handleDelete(item.id)}
+                        className="bg-red-500 text-white p-2 rounded outline-none"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                    <div className="mt-12  ">
+                      <button
+                        onClick={() => handleEdit(item)}
+                        className="bg-blue-500 text-white px-4 py-2 rounded outline-none"
+                      >
+                        Edit
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
