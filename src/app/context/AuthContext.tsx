@@ -4,11 +4,12 @@ import React, { useState, useContext, ReactNode, useEffect } from "react";
 
 export interface User {
   email: string;
+  isAdmin: boolean;
 }
 
 export interface AuthContextType {
   user: User | null;
-  login: (email: string) => void;
+  login: (email: string, isAdmin: boolean) => void;
   logout: () => void;
 }
 
@@ -21,9 +22,12 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
-  const login = (email: string) => {
-    setUser({ email });
-    localStorage.setItem("user", JSON.stringify({ email }));
+  const login = (email: string, isAdmin: boolean) => {
+    // setUser({ email,isAdmin });
+    // localStorage.setItem("user", JSON.stringify({ email }));
+    const users = { email, isAdmin };
+    setUser(users);
+    localStorage.setItem("user", JSON.stringify(users));
   };
 
   const logout = () => {

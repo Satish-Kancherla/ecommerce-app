@@ -29,14 +29,10 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post("/api/auth/login", data);
-      const email = response.data.email;
+      const { email, isAdmin } = response.data;
       console.log(response);
-      login(email);
-      if (response.data.isAdmin) {
-        router.push("/profile");
-      } else {
-        router.push("/dashboard");
-      }
+      login(email, isAdmin);
+      router.push(isAdmin ? "/profile" : "/dashboard");
     } catch (error) {
       setError("Login Failed");
       console.error("Login Failed", error);
