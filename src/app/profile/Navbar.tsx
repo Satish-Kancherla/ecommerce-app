@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import { LogIn, LogOut, User } from "lucide-react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { LayoutDashboard } from 'lucide-react';
 
 const Navbar = () => {
   const { getTotalCartItems } = useShopContext() as ShopContextType;
@@ -118,16 +119,17 @@ const Navbar = () => {
           )}
         </div>
         <hr className="my-2" />
+        <Link href="/dashboard"><MenuItem ><LayoutDashboard className="text-theme-text w-5 mr-2 cursor-pointer" />Dashboard</MenuItem></Link>
         {user ? (
            <Link href="/dashboard"><MenuItem onClick={logout}>
-            <LogOut className="text-theme-text w-5 mr-2 cursor-pointer" />
+            <LogOut className=" w-5 mr-2 cursor-pointer" />
             Logout
           </MenuItem></Link>
         ) : (
           <div>
             <Link href="/login">
               <MenuItem>
-                <LogIn className="text-theme-text w-5 mr-2 cursor-pointer" />
+                <LogIn className=" w-5 mr-2 cursor-pointer" />
                 Login
               </MenuItem>
             </Link>
