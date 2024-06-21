@@ -122,12 +122,22 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <hr className="my-2" />
-        {user ? (
-           <Link href="/dashboard"><MenuItem onClick={logout}>
-            <LogOut className="text-theme-text w-5 mr-2 cursor-pointer" />
-            Logout
-          </MenuItem></Link>
+        <hr className="my-2" />     
+        {user?.isAdmin && (
+          <MenuItem>
+            <Link href="/profile" className="flex">
+              <User className="w-5 mr-2 cursor-pointer" />
+              Profile
+            </Link>
+          </MenuItem>
+        )}
+         {user ? (
+          <Link href="/dashboard">
+            <MenuItem onClick={logout}>
+              <LogOut className="text-theme-text w-5 mr-2 cursor-pointer" />
+              Logout
+            </MenuItem>
+          </Link>
         ) : (
           <div>
             <Link href="/login">
