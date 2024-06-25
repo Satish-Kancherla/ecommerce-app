@@ -56,14 +56,13 @@ const WomenList = () => {
 
   if (!Array.isArray(women) || women.length === 0) {
     return (
-
-        <div className="mt-52 w-screen flex items-center justify-center">
-          <div className="flex justify-center items-center animate-spin gap-1 w-12 h-12">
-            {/* <div className="w-1/2 h-1/2 bg-blue-500 rounded-full"></div> */}
-            <div className="w-1/2 h-1/2 bg-red-700 rounded-full  "></div>
-            <div className="w-1/2 h-1/2 bg-green-700 rounded-full  "></div>
-          </div>
+      <div className="mt-52 w-screen flex items-center justify-center">
+        <div className="flex justify-center items-center animate-spin gap-1 w-12 h-12">
+          {/* <div className="w-1/2 h-1/2 bg-blue-500 rounded-full"></div> */}
+          <div className="w-1/2 h-1/2 bg-red-500 rounded-full  "></div>
+          <div className="w-1/2 h-1/2 bg-green-500 rounded-full  "></div>
         </div>
+      </div>
     );
   }
 
@@ -90,13 +89,23 @@ const WomenList = () => {
               </div>
             </div>
           </div>
-          <div className="ml-auto mt-auto">
+          <div className="flex ml-auto gap-2">
+          <div className=" mt-auto ">
             <button
               onClick={() => handleDelete(item.id)}
               className="bg-red-500 text-white p-2 rounded outline-none"
             >
               Delete
             </button>
+          </div>
+          <div className="mt-auto">
+            <button
+              onClick={() => handleEdit(item)}
+              className="bg-blue-500 text-white px-4 py-2 rounded outline-none"
+            >
+              Edit
+            </button>
+          </div>
           </div>
         </div>
       ))}

@@ -127,7 +127,7 @@ const Navbar = () => {
           <MenuItem>
             <Link href="/profile" className="flex">
               <User className="w-5 mr-2 cursor-pointer" />
-              Profile
+              Admin
             </Link>
           </MenuItem>
         )}
