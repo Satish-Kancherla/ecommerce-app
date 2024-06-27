@@ -22,18 +22,39 @@ const Navbar = () => {
   };
 
   const pathname = usePathname();
-  // const isActive = pathname.startsWith(href);
+
+  const navLinks = [
+    { name: "Home", href: "/dashboard" },
+    { name: "Men", href: "/dashboard/men" },
+    { name: "Women", href: "/dashboard/women" },
+  ];
 
   return (
     <div className="flex justify-center mt-5 text-xl font-semibold">
-      <div className=" ml-5 ">
+      <div className=" ml-5 cursor-none">
         <img src="/social.png" alt="" className="w-12" />
       </div>
-      <div className="mr-auto ml-5 text-3xl mt-1">
+      <div className="mr-auto ml-2 text-3xl mt-1 cursor-none">
         <p>AMAZON</p>
       </div>
       <div className="flex justify-center gap-10 text-xl mt-2 font-semibold ">
-        <Link
+      {navLinks.map((link) => {
+          const isActive =
+            link.name === "Home"
+              ? pathname === link.href
+              : pathname.startsWith(link.href);
+
+          return (
+            <Link
+              className={isActive ? "font-bold mr-4 text-blue-600 focus:border-blue-600 focus:border-b-2" : " mr-4"}
+              href={link.href}
+              key={link.name}
+            >
+              {link.name}
+            </Link>
+          );
+        })}
+        {/* <Link
           // className="isActive :text-red-600 border-red-600 : text-black "
           className="focus:border-b-2 focus:text-red-600  focus:font-bold focus:border-red-600"
           // focus:border-b-2 focus:text-red-600  focus:font-bold focus:border-slate-900
@@ -52,7 +73,7 @@ const Navbar = () => {
           href={"/dashboard/women"}
         >
           Women
-        </Link>
+        </Link> */}
       </div>
       {/* <div className=" ml-auto mr-5 mt-2">
         {user ? (
