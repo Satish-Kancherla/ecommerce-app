@@ -57,8 +57,8 @@ const Man = () => {
         </div>
         <div>
           <Select onValueChange={handleSortChange}>
-            <SelectTrigger className="w-[180px] outline-none">
-              <SelectValue placeholder="Sort by" className="outline-none" />
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Sort by"/>
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="Recommended">Recommended</SelectItem>
