@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Footer from "../components/Footer";
 
 type Item = {
   id: string;
@@ -100,6 +101,9 @@ const List = () => {
           </div>
         </div>
       ))}
+      <div className="pt-20">
+        <Footer />
+      </div>
     </div>
   );
 };
