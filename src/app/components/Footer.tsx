@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
     return (
         <div className="flex flex-col justify-center items-center gap-5">
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 cursor-none">
             <img src="/social.png" alt="Amazon logo" className="w-12" />
             <p className="text-[#383838] text-[35px] font-bold">AMAZON</p>
           </div>
@@ -15,14 +15,14 @@ const Footer = () => {
             <li className="cursor-pointer">Contact</li>
           </ul>
           <div className="flex gap-5">
-            <div className="p-2 pb-1.5 bg-[#fbfbfb] border border-[#ebebeb]">
+            <div className="p-2 pb-1.5 bg-[#fbfbfb] border border-[#ebebeb] cursor-pointer">
               <img src="whatsapp.png" alt="WhatsApp icon" className="w-5" />
             </div>
-            <div className="p-2 pb-1.5 bg-[#fbfbfb] border border-[#ebebeb]">
+            <div className="p-2 pb-1.5 bg-[#fbfbfb] border border-[#ebebeb] cursor-pointer">
               <img src="youtube.png" alt="YouTube icon" className="w-5" />
             </div>
             <div className="p-2 pb-1.5 bg-[#fbfbfb] border border-[#ebebeb]">
-              <img src="/facebook.png" alt="Facebook icon" className="w-5" />
+              <img src="/facebook.png" alt="Facebook icon" className="w-5 cursor-pointer" />
             </div>
           </div>
           <div className="flex flex-col items-center gap-3 w-full mb-7 text-[#1a1a1a] text-[14px]">
