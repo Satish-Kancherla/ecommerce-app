@@ -46,7 +46,7 @@ const Navbar = () => {
 
           return (
             <Link
-              className={isActive ? "font-bold mr-4 text-blue-600 focus:border-blue-600 focus:border-b-2" : " mr-4"}
+              className={isActive ? "font-bold mr-4 text-red-500 focus:border-red-500 focus:border-b-2" : " mr-4"}
               href={link.href}
               key={link.name}
             >
